@@ -2,8 +2,8 @@
 
 Hello. My name is [Christopher Su][1] and I am a student at [UW][9].  
 I frequently update [my blog][2] and occassionally write longer [articles][3].  
-I also maintain resources pertaining to a [few specific topics][4].
-I work on a lot of [projects][8].
+I maintain resources pertaining to a [few specific topics][4].<br />
+I also work on a lot of [projects][8].
 
 Find me on: [GitHub][5], [LinkedIn][6], [Twitter][7]
 
