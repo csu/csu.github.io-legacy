@@ -10,6 +10,6 @@ Find me on: [GitHub][5], [LinkedIn][6], [Twitter][7]
    [2]: http://christophersu.net/blog/
    [3]: http://christophersu.net/articles/
    [4]: http://christophersu.net/archive/
-   [5]: https://github.com/christophersu
+   [5]: https://github.com/csu
    [6]: http://www.linkedin.com/in/suchristopher/
    [7]: http://twitter.com/nitrogen
