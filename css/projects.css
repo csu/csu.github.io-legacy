@@ -32,7 +32,7 @@ a:hover, a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica, sans-serif;
+  font-family: Inconsolata, sans-serif;
   margin: 0 0 0.5rem -0.1rem /* align left edge */;
   line-height: 1;
   color: #111;
@@ -72,7 +72,6 @@ h2 {
 h3, h4, h5, h6 {
   margin-top: 1.5rem;
   font-size: 1rem;
-  text-transform: uppercase;
 }
 
 p, ul, ol, dl, table, pre, blockquote {
