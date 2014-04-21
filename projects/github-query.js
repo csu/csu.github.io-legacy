@@ -1,5 +1,5 @@
 jQuery.githubUser = function(username, callback) {
-   jQuery.getJSON('https://api.github.com/users/'+username+'/repos?callback=?',callback)
+   jQuery.getJSON('https://api.github.com/users/'+username+'/repos?sort=updated&callback=?',callback)
 }
  
 jQuery.fn.loadRepositories = function(username) {
@@ -8,7 +8,6 @@ jQuery.fn.loadRepositories = function(username) {
     var target = this;
     $.githubUser(username, function(data) {
         var repos = data.data; // JSON Parsing
-        sortByName(repos);    
      
         var list = $('<dl/>');
         target.empty().append(list);
@@ -17,12 +16,6 @@ jQuery.fn.loadRepositories = function(username) {
                 list.append('<dt><a href="'+ this.html_url +'">' + this.name + '</a> <em>'+(this.language?('('+this.language+')'):'')+'</em></dt>');
                 list.append('<dd>' + this.description +'</dd>');
             }
-        });      
+        });
       });
-      
-    function sortByName(repos) {
-        repos.sort(function(a,b) {
-        return a.name - b.name;
-       });
-    }
 };
