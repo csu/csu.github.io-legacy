@@ -1,6 +1,6 @@
 
 
-Hello. My name is [Christopher Su][1] and I am a student at [UW][9].  
+Hello. My name is [Christopher Su][1] and I am a student at [UWashington][9].  
 I frequently update [my blog][2] and occassionally write longer [articles][3].  
 I maintain resources pertaining to a [few specific topics][4].  
 I also work on a lot of [projects][8].
