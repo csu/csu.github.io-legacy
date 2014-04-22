@@ -145,3 +145,10 @@ code {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+div
+{
+  columns:300px 3;
+  -webkit-columns:300px 3; /* Safari and Chrome */
+  -moz-columns:300px 3; /* Firefox */
+}
