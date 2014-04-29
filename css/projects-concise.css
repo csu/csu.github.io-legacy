@@ -7,8 +7,13 @@ html {
 
 @media (min-width: 30rem) {
   html {
-    font-size: 20px;
+    font-size: 19px;
   }
+}
+
+#github-projects {
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 body {
@@ -150,4 +155,5 @@ div {
   columns:300px 3;
   -webkit-columns:300px 3; /* Safari and Chrome */
   -moz-columns:300px 3; /* Firefox */
+  /* display: inline-block; */
 }
