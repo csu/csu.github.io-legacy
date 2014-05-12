@@ -18,4 +18,4 @@ I really like going to Hackathons. Here's a timeline of some I've attended and t
 </tr>
 </table>
 
-`*` denotes that I continued/am continuing to work on it after the hackathon.
+`*` denotes that I continued/am continuing to work on the project after the hackathon.
