@@ -13,7 +13,9 @@ I really like going to Hackathons. Here's a timeline of some I've attended and t
 </tr>
 <tr>
   <td>Startup Weekend UW 2014</td>
-  <td><a href="http://getrendezvous.co">Rendezvous</a></td>
+  <td><a href="http://getrendezvous.com">Rendezvous</a>*</td>
   <td>Honorable Mention</td>
 </tr>
 </table>
+
+`*` denotes that I continued/am continuing to work on it after the hackathon.
