@@ -14,6 +14,6 @@ I really like going to Hackathons. Here's a timeline of some I've attended and t
 <tr>
   <td>Startup Weekend UW 2014</td>
   <td><a href="http://getrendezvous.co">Rendezvous</a></td>
-  <td></td>
+  <td>Best Experience</td>
 </tr>
 </table>
