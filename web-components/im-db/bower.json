@@ -1,8 +1,0 @@
-{
-  "name": "im-db",
-  "private": true,
-  "dependencies": {
-    "polymer": "Polymer/polymer#master",
-    "polymer-jsonp": "Polymer/polymer-jsonp#~0.2.3"
-  }
-}
