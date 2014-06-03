@@ -1,7 +1,0 @@
-markdown: redcarpet
-pygments: true
-
-title_tag_text: Christopher Su
-h1_tag_text: Christopher Su
-
-exclude: ["README.md", "package.json", "node_modules"]
