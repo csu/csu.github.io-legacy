@@ -200,27 +200,27 @@ li.repo h3 {
 }
 
 .repo.applescript:after {
-  border-right-color: #6aad2d;
+  border-right-color: #FF3366;
 }
 
 .repo.fortran:after {
-  border-right-color: #6aad2d;
+  border-right-color: #999900;
 }
 
 .repo.c:after {
-  border-right-color: #6aad2d;
+  border-right-color: #66CCFF;
 }
 
 .repo.php:after {
-  border-right-color: #6aad2d;
+  border-right-color: #FFCC66;
 }
 
 .repo.shell:after {
-  border-right-color: #6aad2d;
+  border-right-color: #660066;
 }
 
 .repo.objective-c:after {
-  border-right-color: #6aad2d;
+  border-right-color: #CC0000;
 }
 
 @keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
