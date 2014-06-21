@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Christopher Su</title>
@@ -12,150 +11,20 @@
     (function ($, undefined) {
 
       // Put custom repo URL's in this object, keyed by repo name.
-      var repoUrls = {
-        "bootstrap": "http://twitter.github.com/bootstrap/",
-        "finagle": "http://twitter.github.com/finagle/",
-        "hogan.js": "http://twitter.github.com/hogan.js/"
-      };
+      var repoUrls = {};
 
       function repoUrl(repo) {
         return repoUrls[repo.name] || repo.html_url;
       }
 
       // Put custom repo descriptions in this object, keyed by repo name.
-      var repoDescriptions = {
-
-      };
+      var repoDescriptions = { };
 
       function repoDescription(repo) {
         return repoDescriptions[repo.name] || repo.description;
       }
 
-      function addRecentlyUpdatedRepo(repo) {
-        var $item = $("<li>");
-
-        var $name = $("<a>").attr("href", repo.html_url).text(repo.name);
-        $item.append($("<span>").addClass("name").append($name));
-
-        var $time = $("<a>").attr("href", repo.html_url + "/commits").text(strftime("%h %e, %Y", repo.pushed_at));
-        $item.append($("<span>").addClass("time").append($time));
-
-        $item.append('<span class="bullet">&sdot;</span>');
-
-        var $watchers = $("<a>").attr("href", repo.html_url + "/watchers").text(repo.watchers + " stargazers");
-        $item.append($("<span>").addClass("watchers").append($watchers));
-
-        $item.append('<span class="bullet">&sdot;</span>');
-
-        var $forks = $("<a>").attr("href", repo.html_url + "/network").text(repo.forks + " forks");
-        $item.append($("<span>").addClass("forks").append($forks));
-
-        $item.appendTo("#recently-updated-repos");
-      }
-
-      function addRepo(repo) {
-        var $item = $("<li>").addClass("repo grid-1 " + (repo.language || '').toLowerCase());
-        var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
-        $link.append($("<h2>").text(repo.name));
-        $link.append($("<h3>").text(repo.language));
-        $link.append($("<p>").text(repoDescription(repo)));
-        $item.appendTo("#repos");
-      }
-
-      function addRepos(repos, page) {
-        repos = repos || [];
-        page = page || 1;
-
-        var uri = "https://api.github.com/users/csu/repos?callback=?"
-                + "&per_page=100"
-                + "&page="+page;
-
-        $.getJSON(uri, function (result) {
-          if (result.data && result.data.length > 0) {
-            repos = repos.concat(result.data);
-            addRepos(repos, page + 1);
-          }
-          else {
-            $(function () {
-              $("#num-repos").text(repos.length);
-
-              // Convert pushed_at to Date.
-              $.each(repos, function (i, repo) {
-                repo.pushed_at = new Date(repo.pushed_at);
-
-                var weekHalfLife  = 1.146 * Math.pow(10, -9);
-
-                var pushDelta    = (new Date) - Date.parse(repo.pushed_at);
-                var createdDelta = (new Date) - Date.parse(repo.created_at);
-
-                var weightForPush = 1;
-                var weightForWatchers = 1.314 * Math.pow(10, 7);
-
-                repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta);
-                repo.hotness += weightForWatchers * repo.watchers / createdDelta;
-              });
-
-              // Sort by highest # of watchers.
-              repos.sort(function (a, b) {
-                if (a.hotness < b.hotness) return 1;
-                if (b.hotness < a.hotness) return -1;
-                return 0;
-              });
-
-              $.each(repos, function (i, repo) {
-                addRepo(repo);
-              });
-
-              // Sort by most-recently pushed to.
-              repos.sort(function (a, b) {
-                if (a.pushed_at < b.pushed_at) return 1;
-                if (b.pushed_at < a.pushed_at) return -1;
-                return 0;
-              });
-
-              $.each(repos.slice(0, 3), function (i, repo) {
-                addRecentlyUpdatedRepo(repo);
-              });
-            });
-          }
-        });
-      }
-      addRepos();
-
-
-      function randomItem(array) {
-        return array[Math.floor(Math.random() * array.length)];
-      }
-
-      var $flyzone;
-
-      function flyzone() {
-        if (!$flyzone) {
-          $flyzone = $("<div>").attr("id", "flyzone").prependTo(document.body);
-        }
-
-        return $flyzone;
-      }
-
-      var sizes = ["smaller", "small", "medium", "large", "fat"];
-
-      var sizeDimensions = {
-        "smaller": 50,
-        "small": 80,
-        "medium": 130,
-        "large": 200,
-        "fat": 300
-      };
-
-      function randomOpacity(threshold) {
-        var opacity = Math.random();
-
-        while (opacity < threshold) {
-          opacity = Math.random();
-        }
-
-        return opacity;
-      }
+function addRecentlyUpdatedRepo(e){var t=$("<li>");var n=$("<a>").attr("href",e.html_url).text(e.name);t.append($("<span>").addClass("name").append(n));var r=$("<a>").attr("href",e.html_url+"/commits").text(strftime("%h %e, %Y",e.pushed_at));t.append($("<span>").addClass("time").append(r));t.append('<span class="bullet">&sdot;</span>');var i=$("<a>").attr("href",e.html_url+"/watchers").text(e.watchers+" stargazers");t.append($("<span>").addClass("watchers").append(i));t.append('<span class="bullet">&sdot;</span>');var s=$("<a>").attr("href",e.html_url+"/network").text(e.forks+" forks");t.append($("<span>").addClass("forks").append(s));t.appendTo("#recently-updated-repos")}function addRepo(e){var t=$("<li>").addClass("repo grid-1 "+(e.language||"").toLowerCase());var n=$("<a>").attr("href",repoUrl(e)).appendTo(t);n.append($("<h2>").text(e.name));n.append($("<h3>").text(e.language));n.append($("<p>").text(repoDescription(e)));t.appendTo("#repos")}function addRepos(e,t){e=e||[];t=t||1;var n="https://api.github.com/users/csu/repos?callback=?"+"&per_page=100"+"&page="+t;$.getJSON(n,function(n){if(n.data&&n.data.length>0){e=e.concat(n.data);addRepos(e,t+1)}else{$(function(){$("#num-repos").text(e.length);$.each(e,function(e,t){t.pushed_at=new Date(t.pushed_at);var n=1.146*Math.pow(10,-9);var r=new Date-Date.parse(t.pushed_at);var i=new Date-Date.parse(t.created_at);var s=1;var o=1.314*Math.pow(10,7);t.hotness=s*Math.pow(Math.E,-1*n*r);t.hotness+=o*t.watchers/i});e.sort(function(e,t){if(e.hotness<t.hotness)return 1;if(t.hotness<e.hotness)return-1;return 0});$.each(e,function(e,t){addRepo(t)});e.sort(function(e,t){if(e.pushed_at<t.pushed_at)return 1;if(t.pushed_at<e.pushed_at)return-1;return 0});$.each(e.slice(0,3),function(e,t){addRecentlyUpdatedRepo(t)})})}})}function randomItem(e){return e[Math.floor(Math.random()*e.length)]}function flyzone(){if(!$flyzone){$flyzone=$("<div>").attr("id","flyzone").prependTo(document.body)}return $flyzone}function randomOpacity(e){var t=Math.random();while(t<e){t=Math.random()}return t}addRepos();var $flyzone;var sizes=["smaller","small","medium","large","fat"];var sizeDimensions={smaller:50,small:80,medium:130,large:200,fat:300}
 
 
     })(jQuery);
