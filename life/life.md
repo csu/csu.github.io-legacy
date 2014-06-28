@@ -12,4 +12,5 @@ Christopher Su's life
 - 07/2012-08/2012 Intern at Tsinghua University
 - 09/2013-~ Seattle, WA
 - 09/2013-~ University of Washington
+- 06/2014-~ San Jose, CA
 - 06/2014-~ Intern at Cisco
