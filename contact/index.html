@@ -1,6 +1,23 @@
-<form action="//forms.brace.io/christophersu9@gmail.com">
-    <input type="text" name="name">
-    <input type="email" name="_replyto">
-    <input type="submit" value="Send">
+    <form method="POST" action="http://forms.brace.io/christophersu9@gmail.com">
+    
+        <div class="form-group">
+            <label for="contactInputName">Name</label>
+            <input name="name" type="name" class="form-control" id="contactInputName" placeholder="Your name">
+        </div>
+    
+        <div class="form-group">
+            <label for="contactInputEmail1">Email address</label>
+            <input name="_replyto" type="email" class="form-control" id="contactInputEmail1" placeholder="Your email">
+        </div>
+    
+        <div class="form-group">
+            <label for="contactTextArea">Message</label>
+            <textarea name="message" class="form-control" rows="3" placeholder="Your message"></textarea>    
+        </div>
+      
+        <button type="submit" class="btn btn-primary" value="Send">Submit</button>
+
+
     <input type="hidden" name="_next" value="http://christophersu.net/" />
-</form>
+
+    </form>
